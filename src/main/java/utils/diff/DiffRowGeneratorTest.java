@@ -12,8 +12,8 @@ import java.util.List;
 public class DiffRowGeneratorTest {
 
     public static void main(String[] args) {
-//        testGeneratorExample1();
-        testGeneratorExample2();
+        testGeneratorExample1();
+//        testGeneratorExample2();
 
     }
 
@@ -21,11 +21,12 @@ public class DiffRowGeneratorTest {
     private static void testGeneratorExample1() {
         //create a configured DiffRowGenerator
         DiffRowGenerator generator = DiffRowGenerator.create()
-                .showInlineDiffs(true)
-                .mergeOriginalRevised(true)
-                .inlineDiffByWord(true)
-                .oldTag(f -> "~")      //introduce markdown style for strikethrough
-                .newTag(f -> "**")     //introduce markdown style for bold
+                .showInlineDiffs(false)
+//                .mergeOriginalRevised(true)
+//                .inlineDiffByWord(true)
+//                .columnWidth(1)
+//                .oldTag(f -> "~~")      //introduce markdown style for strikethrough
+//                .newTag(f -> "**")     //introduce markdown style for bold
                 .build();
 
         //compute the differences for two test texts.
@@ -42,7 +43,7 @@ public class DiffRowGeneratorTest {
         DiffRowGenerator generator = DiffRowGenerator.create()
                 .showInlineDiffs(true)
                 .inlineDiffByWord(true)
-                .oldTag(f -> "~")      //introduce markdown style for strikethrough
+                .oldTag(f -> "~~")      //introduce markdown style for strikethrough
                 .newTag(f -> "**")     //introduce markdown style for bold
                 .build();
 
